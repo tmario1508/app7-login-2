@@ -36,20 +36,50 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func ValidarUsuario(usuario: String, pass: String){
-        if usuario == "mario" && pass == "1234" {
-            plist.set(usuario, forKey: "usuario")
-        }else {
-            //MARK: Crear una alerta
-            let alerta = UIAlertController(title: "Login fail", message: "Usuario y/o contraseña incorrectos", preferredStyle: .alert)
-            //MARK: Crear accion para la alerta
-            alerta.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {
-                    (UIAlertAction) in print("Se le ha dado en el boton aceptar")
-                }))
-                    
-            //MARK: Presentar alerta
-            present(alerta, animated: true, completion: nil)
+    @IBAction func onLogin2(_ sender: Any) {
+        //MARK: Crear una alerta
+        let alerta = UIAlertController(title: "Alerta uno", message: "Este es un mensaje", preferredStyle: .alert)
+        alerta.addTextField{ (UITextField) in
+                UITextField.placeholder = "Usuario"
+                UITextField.textColor = UIColor.blue
         }
+        alerta.addTextField{ (UITextField) in
+                UITextField.placeholder = "Contraseña"
+                UITextField.textColor = UIColor.blue
+        }
+        //MARK: Crear acciones para la alerta
+        alerta.addAction(UIAlertAction(title: "Entrar", style: .default, handler: {
+        
+            (UIAlertAction) in self.ValidarUsuario(usuario: alerta.textFields![0].text!, pass: alerta.textFields![1].text!)
+                  
+        }))
+        alerta.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: {
+                  (UIAlertAction) in
+        }))
+              
+              //MARK: Presentar alerta
+              present(alerta, animated: true, completion: nil)
+    }
+    
+    
+    func ValidarUsuario(usuario: String, pass: String){
+        for item in lista {
+            if item.usuario == usuario && item.pass == pass {
+                plist.set(usuario, forKey: "usuario")
+                appDelegate.OnLoginSuccess()
+            }else {
+                //MARK: Crear una alerta
+                let alerta = UIAlertController(title: "Login fail", message: "Usuario y/o contraseña incorrectos", preferredStyle: .alert)
+                //MARK: Crear accion para la alerta
+                alerta.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {
+                        (UIAlertAction) in print("Se le ha dado en el boton aceptar")
+                    }))
+                        
+                //MARK: Presentar alerta
+                present(alerta, animated: true, completion: nil)
+            }
+        }
+        
     }
     
     

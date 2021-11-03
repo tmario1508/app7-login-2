@@ -28,7 +28,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Segunda ViewController"/>
                                 <connections>
-                                    <segue destination="guq-52-diF" kind="show" id="DAc-0L-mmc"/>
+                                    <segue destination="guq-52-diF" kind="show" id="Fgb-uy-QQV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Principal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0g-K7-soz">
@@ -56,7 +56,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="2Ni-in-zTX">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="2Ni-in-zTX">
                                 <rect key="frame" x="57" y="245" width="300" height="204"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eml-EB-uHY">
@@ -81,14 +81,31 @@
                                     <constraint firstAttribute="width" constant="300" id="aDn-sI-abT"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxf-Lg-tJl">
+                                <rect key="frame" x="152" y="501" width="111" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Agregar Usuario"/>
+                                <connections>
+                                    <segue destination="JI8-Zu-7Yj" kind="show" id="u7q-id-WPt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INx-9t-fxP">
+                                <rect key="frame" x="152" y="463" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login con Alerta"/>
+                                <connections>
+                                    <action selector="onLogin2:" destination="hPH-5s-LIL" eventType="touchUpInside" id="xG4-jK-R0u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xyk-fo-T8w"/>
                         <color key="backgroundColor" red="0.65940192285889321" green="1" blue="0.76165393599016318" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2Ni-in-zTX" firstAttribute="leading" secondItem="xyk-fo-T8w" secondAttribute="leading" constant="170" id="AiU-VH-IUA"/>
-                            <constraint firstItem="2Ni-in-zTX" firstAttribute="top" secondItem="xyk-fo-T8w" secondAttribute="top" constant="205" id="sYN-rT-fCw"/>
+                            <constraint firstItem="2Ni-in-zTX" firstAttribute="centerX" secondItem="3B5-CD-QM8" secondAttribute="centerX" id="rcW-QZ-4Ll"/>
+                            <constraint firstItem="2Ni-in-zTX" firstAttribute="top" secondItem="xyk-fo-T8w" secondAttribute="top" constant="201" id="sYN-rT-fCw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="EDR-ey-AL3"/>
                     <connections>
                         <outlet property="txtPass" destination="Ygm-No-qd8" id="Eix-H2-jAq"/>
                         <outlet property="txtUser" destination="eml-EB-uHY" id="ihO-MB-55R"/>
@@ -119,7 +136,7 @@
         <!--View Controller-->
         <scene sceneID="2V3-1q-z1F">
             <objects>
-                <viewController id="guq-52-diF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Segunda" id="guq-52-diF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yuE-xD-zZY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,6 +148,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acv-hy-ATb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1880" y="134"/>
+        </scene>
+        <!--Agregar View Controller-->
+        <scene sceneID="gIK-6P-uUs">
+            <objects>
+                <viewController id="JI8-Zu-7Yj" customClass="AgregarViewController" customModule="app7_login" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nkq-f2-dga">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="hBt-nk-ajY">
+                                <rect key="frame" x="57" y="149" width="300" height="204"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZM-HG-Iio">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Env-S6-Wjb">
+                                        <rect key="frame" x="0.0" y="87" width="300" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcF-1L-n2n">
+                                        <rect key="frame" x="0.0" y="174" width="300" height="30"/>
+                                        <state key="normal" title="Agregar"/>
+                                        <connections>
+                                            <action selector="OnLogin:" destination="hPH-5s-LIL" eventType="touchUpInside" id="NNd-0Q-OYE"/>
+                                            <action selector="onAgregar:" destination="JI8-Zu-7Yj" eventType="touchUpInside" id="Zue-Wv-OnB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="bgq-jV-ZFg"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN5-AR-eIh">
+                                <rect key="frame" x="170" y="394" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login View"/>
+                                <connections>
+                                    <action selector="onLogin:" destination="JI8-Zu-7Yj" eventType="touchUpInside" id="uLe-wC-R5r"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mFT-43-d3v"/>
+                        <color key="backgroundColor" red="0.66522020100000001" green="0.99569529290000003" blue="0.74716711039999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hBt-nk-ajY" firstAttribute="centerX" secondItem="Nkq-f2-dga" secondAttribute="centerX" id="5BR-ss-Cs0"/>
+                            <constraint firstItem="hBt-nk-ajY" firstAttribute="top" secondItem="mFT-43-d3v" secondAttribute="top" constant="149" id="60Z-X1-tep"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TXA-BK-yiO"/>
+                    <connections>
+                        <outlet property="txtPassword" destination="Env-S6-Wjb" id="3cz-54-ZHQ"/>
+                        <outlet property="txtUser" destination="WZM-HG-Iio" id="Xa2-2c-jLI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dF1-ec-Ovx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="815"/>
         </scene>
     </scenes>
 </document>

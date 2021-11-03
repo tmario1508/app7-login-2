@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func GetViewController(storyboard: UIStoryboard, ViewControllerName : String) -> UIViewController {
-        storyboard.instantiateViewController(withIdentifier: ViewControllerName)
+        return storyboard.instantiateViewController(withIdentifier: ViewControllerName)
     }
     
     func SetrootViewController(rootViewController: UIViewController, animate: Bool, tipo: Int) {
@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 window?.rootViewController = rootViewController
             }
             //MARK: Animacion
-            UIView.transition(with: window!, duration: 0.5, options: .transitionFlipFromRight, animations: {
+            /*UIView.transition(with: window!, duration: 0.5, options: .transitionFlipFromRight, animations: {
                 if tipo == 0 {
                     rootViewController.title = "Vista"
                     self.navController = UINavigationController(rootViewController: rootViewController)
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.window?.rootViewController = rootViewController
                 }
                 
-            }, completion: nil)
+            }, completion: nil)*/
         } else {
             if animate {
                 if (tipo == 0) {
@@ -80,22 +80,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func OnLoginSuccess(){
         let viewController = GetViewController(storyboard: MainStoryBoard(), ViewControllerName: "Principal")
-        SetrootViewController(rootViewController: viewController, animate: false, tipo: 0)
+        SetrootViewController(rootViewController: viewController, animate: true, tipo: 0)
     }
 
     // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
 
 
 }

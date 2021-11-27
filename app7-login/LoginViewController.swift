@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func onLogin2(_ sender: Any) {
         //MARK: Crear una alerta
-        let alerta = UIAlertController(title: "Alerta uno", message: "Este es un mensaje", preferredStyle: .alert)
+        let alerta = UIAlertController(title: "Login", message: "Ingrese sus datos", preferredStyle: .alert)
         alerta.addTextField{ (UITextField) in
                 UITextField.placeholder = "Usuario"
                 UITextField.textColor = UIColor.blue
@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
                 appDelegate.OnLoginSuccess()
             }else {
                 //MARK: Crear una alerta
-                let alerta = UIAlertController(title: "Login fail", message: "Usuario y/o contraseña incorrectos", preferredStyle: .alert)
+                let alerta = UIAlertController(title: "Login fail", message: "Usuario y/o contraseña incorrectos, intenta nuevamente", preferredStyle: .alert)
                 //MARK: Crear accion para la alerta
                 alerta.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {
                         (UIAlertAction) in print("Se le ha dado en el boton aceptar")
